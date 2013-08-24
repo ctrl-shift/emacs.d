@@ -1,1 +1,0 @@
-my emacs live config

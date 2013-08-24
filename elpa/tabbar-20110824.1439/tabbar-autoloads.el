@@ -9,8 +9,8 @@
 ;;;;;;  tabbar-mwheel-forward tabbar-mwheel-backward tabbar-press-scroll-right
 ;;;;;;  tabbar-press-scroll-left tabbar-press-home tabbar-forward-tab
 ;;;;;;  tabbar-backward-tab tabbar-forward-group tabbar-backward-group
-;;;;;;  tabbar-forward tabbar-backward) "tabbar" "tabbar.el" (20951
-;;;;;;  6580 863412 878000))
+;;;;;;  tabbar-forward tabbar-backward) "tabbar" "tabbar.el" (21015
+;;;;;;  51429 934596 507000))
 ;;; Generated autoloads from tabbar.el
 
 (autoload 'tabbar-backward "tabbar" "\
@@ -172,7 +172,7 @@ Returns non-nil if the new state is enabled.
 
 ;;;***
 
-;;;### (autoloads nil nil ("tabbar-pkg.el") (20951 6581 238091 693000))
+;;;### (autoloads nil nil ("tabbar-pkg.el") (21015 51430 345698 428000))
 
 ;;;***
 
