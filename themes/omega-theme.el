@@ -22,6 +22,7 @@
  '(rainbow-delimiters-depth-5-face ((t (:foreground "RosyBrown4"))))
  '(show-paren-match ((t (:foreground "sandy brown" :background nil))))
  '(show-paren-mismatch ((t (:foreground "red" :background nil))))
- '(region ((t (:background "gray16")))))
+ '(region ((t (:background "gray16"))))
+ '(font-lock-type-face ((t (:foreground "NavajoWhite3")))))
 
 (provide-theme 'omega)
