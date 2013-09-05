@@ -32,6 +32,9 @@
       (when (not (package-installed-p p))
 	(package-install p)))
 
+;"y" instead of "yes"
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;configure speedbar
 (require 'sr-speedbar)
 (setq sr-speedbar-right-side nil)
@@ -76,6 +79,20 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
+;;add autopair for closing parens and etc auto-inserting 
+(autopair-global-mode t)
+(setq autopair-blink nil)
+
+;ace jump mode for quickly navigating code
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+;whole line or region mode for deleting/copying whole line/region
+(whole-line-or-region-mode t)
+
+;ido for better buffer/file navigation
+(require 'ido)
+(ido-mode t)
+
 ;;configure themes
 (setq custom-theme-directory "~/.emacs.d/themes/")
 (setq custom-safe-themes t)
@@ -85,4 +102,3 @@
 ;(load-theme 'delta)
 ;; main light theme (work in progress)
 ;(load-theme 'alpha)
-

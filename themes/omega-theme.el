@@ -23,6 +23,7 @@
  '(show-paren-match ((t (:foreground "sandy brown" :background nil))))
  '(show-paren-mismatch ((t (:foreground "red" :background nil))))
  '(region ((t (:background "gray16"))))
- '(font-lock-type-face ((t (:foreground "NavajoWhite3")))))
+ '(font-lock-type-face ((t (:foreground "NavajoWhite3"))))
+ '(ido-subdir ((t (:foreground "wheat")))))
 
 (provide-theme 'omega)

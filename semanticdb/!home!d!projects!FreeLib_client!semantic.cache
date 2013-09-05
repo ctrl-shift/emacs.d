@@ -1,0 +1,149 @@
+;; Object FreeLib_client/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "FreeLib_client/"
+  :tables (list 
+   (semanticdb-table "book.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("book.h" include nil nil [742 759])
+            ("QtCore" include (:system-flag t) nil [760 777])
+            ("freeLib" using (:type ("freeLib" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [779 803])
+            ("Book" function
+               (:constructor-flag t
+                :parent "Book"
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("QObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [816 832]))                  
+                :type ("Book" type (:type "class") nil nil))
+                nil [805 969])
+            ("Book" function
+               (:constructor-flag t
+                :parent "Book"
+                :arguments 
+                  ( ("data" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QVariantMap" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [982 1006])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("QObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1007 1023]))                  
+                :type ("Book" type (:type "class") nil nil))
+                nil [971 1349])
+            ("Book" function
+               (:constructor-flag t
+                :parent "Book"
+                :arguments 
+                  ( ("other" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Book" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1362 1380]))                  
+                :type ("Book" type (:type "class") nil nil))
+                nil [1351 1543])
+            ("clearData" function
+               (:parent "Book"
+                :type "void")
+                nil [1545 1669])
+            ("setInfoFrom" function
+               (:parent "Book"
+                :arguments 
+                  ( ("data" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QVariantMap" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1694 1718]))                  
+                :type "void")
+                nil [1671 1986])
+            ("updateInfo" function
+               (:parent "Book"
+                :arguments 
+                  ( ("data" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QVariantMap" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2009 2033]))                  
+                :type "int")
+                nil [1988 2148])
+            ("name" function
+               (:pointer 1
+                :parent "Book"
+                :type ("QString" type (:type "class") nil nil))
+                nil [2150 2199])
+            ("author" function
+               (:pointer 1
+                :parent "Book"
+                :type ("QString" type (:type "class") nil nil))
+                nil [2201 2254])
+            ("extension" function
+               (:pointer 1
+                :parent "Book"
+                :type ("QString" type (:type "class") nil nil))
+                nil [2256 2315])
+            ("path" function
+               (:pointer 1
+                :parent "Book"
+                :type ("QString" type (:type "class") nil nil))
+                nil [2317 2366])
+            ("id" function
+               (:parent "Book"
+                :type "int")
+                nil [2368 2408])
+            ("addedAt" function
+               (:pointer 1
+                :parent "Book"
+                :type ("QDateTime" type (:type "class") nil nil))
+                nil [2410 2465])
+            ("filename" function
+               (:parent "Book"
+                :type ("QString" type (:type "class") nil nil))
+                nil [2467 2674])
+            ("==" function
+               (:operator-flag t
+                :parent "Book"
+                :arguments 
+                  ( ("right" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Book" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2699 2717]))                  
+                :type "bool")
+                nil [2676 2757])
+            ("=" function
+               (:operator-flag t
+                :parent "Book"
+                :arguments 
+                  ( ("right" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Book" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2782 2800]))                  
+                :type ("Book" type (:type "class") nil nil))
+                nil [2759 3232])
+            ("Book" function
+               (:destructor-flag t
+                :parent "Book"
+                :type "void")
+                nil [3234 3268]))          
+    :file "book.cpp"
+    :pointmax 3271
+    :fsize 3270
+    :lastmodtime '(21017 14596 516694 370000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "book.h"
+    :file "book.h"
+    :fsize 1753
+    :lastmodtime '(21017 14090 116672 466000)
+    )
+   )
+  :file "!home!d!projects!FreeLib_client!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )
