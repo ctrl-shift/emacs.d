@@ -16,21 +16,6 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-;install needed packages if they are missing for some reason
-(require 'cl)
-(defvar packages-to-install '(clojure-mode 
-			      nrepl
-			      ac-nrepl
-			      sr-speedbar
-			      tabbar
-			      rainbow-delimiters))
-
-(when (some (lambda (p) (not (package-installed-p p))) packages-to-install)
-    (package-refresh-contents))
-
-(loop for p in packages-to-install do 
-      (when (not (package-installed-p p))
-	(package-install p)))
 
 ;"y" instead of "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -85,6 +70,7 @@
 
 ;ace jump mode for quickly navigating code
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-z") 'ace-jump-mode)
 
 ;whole line or region mode for deleting/copying whole line/region
 (whole-line-or-region-mode t)
@@ -98,7 +84,6 @@
 (setq custom-safe-themes t)
 ;; primary dark theme
 (load-theme 'omega) 
-;; more lighter theme based on tango colors (work in progress)
-;(load-theme 'delta)
-;; main light theme (work in progress)
-;(load-theme 'alpha)
+;; set good font if avalaible 
+(ignore-errors (set-face-attribute 'default nil :font "dejavu sans mono" :height 100))
+
