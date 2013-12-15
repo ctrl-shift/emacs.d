@@ -86,4 +86,13 @@
 (load-theme 'omega) 
 ;; set good font if avalaible 
 (ignore-errors (set-face-attribute 'default nil :font "dejavu sans mono" :height 100))
+;no tabs
+(setq-default indent-tabs-mode nil)
+(defun my-valastuff ()
+  (setq indent-tabs-mode nil
+        c-basic-offset 2
+        tab-width 2))
+(add-hook 'vala-mode-hook 'my-valastuff)
+
+
 
