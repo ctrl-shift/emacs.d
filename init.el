@@ -25,23 +25,22 @@
 (setq sr-speedbar-right-side nil)
 
 ;configure autocomplete in clojure buffers
-(require 'nrepl)
+(require 'cider)
 (require 'ac-nrepl)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-
+(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-mode-hook 'ac-nrepl-setup)
 (eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'nrepl-mode))
+  '(add-to-list 'ac-modes 'cider-repl-mode))
 
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
-
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
-(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
-(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'cider-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
-(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+(eval-after-load "cider"
+  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
 (setq ac-auto-show-menu 0.2)
 
@@ -51,7 +50,7 @@
 (global-linum-mode t)
 
 ;hide unneeded nrepl buffers
-(setq nrepl-hide-special-buffers t)
+;(setq nrepl-hide-special-buffers t)
 
 ;show matching and mismatching parentnesses
 (show-paren-mode t)
@@ -88,11 +87,21 @@
 (ignore-errors (set-face-attribute 'default nil :font "dejavu sans mono" :height 100))
 ;no tabs
 (setq-default indent-tabs-mode nil)
-(defun my-valastuff ()
+
+;vala stuff
+(defun valastuff ()
   (setq indent-tabs-mode nil
         c-basic-offset 2
         tab-width 2))
-(add-hook 'vala-mode-hook 'my-valastuff)
+(add-hook 'vala-mode-hook 'valastuff)
 
+(add-hook 'c-mode-common-hook
+          (lambda ()
+             (c-set-offset 'case-label '+)))
 
+;;delete selected text on typing
+(delete-selection-mode 1)
 
+;erase buffer
+(put 'erase-buffer 'disabled nil)
+(global-set-key (kbd "<f9>") 'erase-buffer)
