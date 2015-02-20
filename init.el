@@ -1,5 +1,4 @@
-;disables menu,toolbar
-(tool-bar-mode -1)
+;disables menu
 (menu-bar-mode 0)
 
 ;remove splashscreen
@@ -15,7 +14,6 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
-
 
 ;"y" instead of "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -84,7 +82,8 @@
 ;; primary dark theme
 (load-theme 'omega) 
 ;; set good font if avalaible 
-(ignore-errors (set-face-attribute 'default nil :font "dejavu sans mono" :height 100))
+(ignore-errors
+  (set-face-attribute 'default nil :font "dejavu sans mono" :height 100))
 ;no tabs
 (setq-default indent-tabs-mode nil)
 
@@ -113,3 +112,32 @@
   kept-new-versions 6
   kept-old-versions 2
   version-control t)
+
+;tabbar
+(tabbar-mode t)
+(setq tabbar-use-images nil)
+(setq tabbar-separator (quote (0.8)))
+;(setq tabbar-background-color "gray15")
+(tabbar-mwheel-mode t)
+
+(defun tabbar-buffer-tab-label (tab)
+  "Return a label for TAB.
+That is, a string used to represent it on the tab bar."
+  (let ((label (if tabbar--buffer-show-groups
+                   (format " [%s] " (tabbar-tab-tabset tab))
+                 (format " %s " (tabbar-tab-value tab)))))
+    ;; Unless the tab bar auto scrolls to keep the selected tab
+    ;; visible, shorten the tab label to keep as many tabs as possible
+    ;; in the visible area of the tab bar.
+    (if tabbar-auto-scroll-flag
+        label
+      (tabbar-shorten
+       label (max 1 (/ (window-width)
+                       (length (tabbar-view
+                                (tabbar-current-tabset)))))))))
+
+(tabbar-mode 1)
+
+(global-set-key [M-left] 'tabbar-backward-tab)
+(global-set-key [M-right] 'tabbar-forward-tab)
+

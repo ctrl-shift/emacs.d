@@ -24,6 +24,20 @@
  '(show-paren-mismatch ((t (:foreground "red" :background nil))))
  '(region ((t (:background "gray16"))))
  '(font-lock-type-face ((t (:foreground "NavajoWhite3"))))
- '(ido-subdir ((t (:foreground "wheat")))))
+ '(ido-subdir ((t (:foreground "wheat"))))
+ '(tool-bar ((t (:background "gray15" :box (:line-width 1 :style released-button)))))
+ '(tabbar-button ((t (:inherit tabbar-default :background "#203040" :foreground "yellow" :box (:line-width 1 :color "gray15" :style released-button) :family "DejaVu Sans Mono"))))
+ '(tabbar-button-highlight ((t (:inherit tabbar-button :foreground "gold"))))
+ '(tabbar-default ((t (:inherit variable-pitch :background "gray22" :foreground "gray90" :height 1.15))))
+ '(tabbar-highlight ((t (:foreground "light goldenrod"))))
+ '(tabbar-modified ((t (:inherit tabbar-default :foreground "lime green" :box (:line-width 1 :color "dark olive green" :style released-button)))))
+ '(tabbar-selected ((t (:inherit tabbar-default :background "#102030" :foreground "light goldenrod yellow" :box (:line-width 1 :style released-button)))))
+ '(tabbar-separator ((t (:background "gray15"))))
+ '(tabbar-unselected ((t (:inherit tabbar-default :box (:line-width 1 :style released-button)))))
+)
+
+(custom-theme-set-variables
+ 'omega
+ '(tabbar-background-color "gray15"))
 
 (provide-theme 'omega)
