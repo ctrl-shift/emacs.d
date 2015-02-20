@@ -148,3 +148,14 @@ That is, a string used to represent it on the tab bar."
 
 (global-set-key [M-left] 'tabbar-backward-tab)
 (global-set-key [M-right] 'tabbar-forward-tab)
+
+;reopen last files
+(setq desktop-dirname             "~/.emacs.d/"
+      desktop-base-file-name      "emacs.desktop"
+      desktop-base-lock-name      "emacs.desktop.lock"
+      desktop-path                (list desktop-dirname)
+      desktop-save                t
+      desktop-files-not-to-save   "^$" ;reload tramp paths
+      desktop-load-locked-desktop nil)
+
+(desktop-save-mode 1)

@@ -29,12 +29,11 @@
  '(tabbar-button ((t (:inherit tabbar-default :background "#203040" :foreground "yellow" :box (:line-width 1 :color "gray15" :style released-button) :family "DejaVu Sans Mono"))))
  '(tabbar-button-highlight ((t (:inherit tabbar-button :foreground "gold"))))
  '(tabbar-default ((t (:inherit variable-pitch :background "gray17" :foreground "gray90" :height 1.15))))
- '(tabbar-highlight ((t (:foreground "light goldenrod"))))
+ '(tabbar-highlight ((t (:foreground "light goldenrod" :underline nil :foreground "gray90"))))
  '(tabbar-selected ((t (:inherit tabbar-default :background "#102030" :foreground "light goldenrod yellow" :box (:line-width 1 :style released-button)))))
  '(tabbar-separator ((t (:background "gray15"))))
  '(tabbar-unselected ((t (:inherit tabbar-default :box (:line-width 1 :style released-button)))))
- '(tabbar-highlight ((t (:foreground "light goldenrod"))))
- '(tabbar-modified ((t (:inherit tabbar-default :box (:line-width 1 :style released-button) :overline "goldenrod3"))))
+ '(tabbar-modified ((t (:inherit tabbar-default :box (:line-width 1 :style released-button) :overline "goldenrod3" :foreground nil))))
 )
 
 (custom-theme-set-variables
