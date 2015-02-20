@@ -6,7 +6,7 @@
 
 ;show collumn number
 (setq-default column-number-mode t)
-
+;
 ;add new package archives
 (require 'package)
 (add-to-list 'package-archives
@@ -117,7 +117,6 @@
 (tabbar-mode t)
 (setq tabbar-use-images nil)
 (setq tabbar-separator (quote (0.8)))
-;(setq tabbar-background-color "gray15")
 (tabbar-mwheel-mode t)
 
 (defun tabbar-buffer-tab-label (tab)
@@ -138,6 +137,14 @@ That is, a string used to represent it on the tab bar."
 
 (tabbar-mode 1)
 
+(defun my-tabbar-buffer-groups () ;; customize to show all normal files in one group
+  "Returns the name of the tab group names the current buffer belongs to.
+ There are two groups: Emacs buffers (those whose name starts with '*', plus
+ dired buffers), and the rest."
+  (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
+              ((eq major-mode 'dired-mode) "emacs")
+              (t "user"))))
+(setq tabbar-buffer-groups-function 'my-tabbar-buffer-groups)
+
 (global-set-key [M-left] 'tabbar-backward-tab)
 (global-set-key [M-right] 'tabbar-forward-tab)
-
